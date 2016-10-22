@@ -6,6 +6,13 @@ Scraper for the Ikea Hebrew Catalog 2017
  - Supports Hebrew encoding
 
 
+Steps
+-----
+
+ 1. Use web scraping tool to get all the Ikea categories URL (e.g., http://webscraper.io/) - see the `ikeaurls.xlsx`	 in `ik` folder.
+ 2. Use *wget* tool to download all the webpages - see the zip file `ikea_categories_heb_htmls.zip`	in the `ik` folder.
+ 3. Use this code to build the catalog
+
 How to get images to appear in Excel given image URL
 ----------------------------------------------------
 
