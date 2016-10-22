@@ -242,7 +242,7 @@ namespace IkeaIL
             {
                 Console.WriteLine(ex.ToString());
             }
-            return prodDesignDesc;
+            return CleanValue(prodDesignDesc);
         }
 
         private static string FindProductPrice(HtmlDocument docProd)
@@ -323,7 +323,7 @@ namespace IkeaIL
             {
                 Console.WriteLine(ex.ToString());
             }
-            return prodName;
+            return CleanValue(prodName);
         }
 
         private static string CleanValue(string innerText)
