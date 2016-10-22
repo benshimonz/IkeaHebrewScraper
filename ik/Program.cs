@@ -301,7 +301,7 @@ namespace IkeaIL
             try
             {
                 HtmlNode prodSKUNode = docProd.DocumentNode.SelectSingleNode("//*[@class=\"ProductTextNormal1\"]");
-                SKU = CleanValue(prodSKUNode.InnerText).Split(':')[1];
+                SKU = prodSKUNode.InnerText.Split(':')[1];
 
             }
             catch (Exception ex)
@@ -317,7 +317,7 @@ namespace IkeaIL
             try
             {
                 HtmlNode prodNameNode = docProd.DocumentNode.SelectSingleNode("//*[@class=\"ProductTitle2\"]");
-                prodName = CleanValue(prodNameNode.InnerText);
+                prodName = prodNameNode.InnerText;
             }
             catch (Exception ex)
             {
