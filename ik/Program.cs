@@ -329,7 +329,7 @@ namespace IkeaIL
         private static string CleanValue(string innerText)
         {
             string newCleanedValue = WebUtility.HtmlDecode(innerText).Trim();
-            newCleanedValue = Regex.Replace(newCleanedValue, @"\r\n?|\n", " ");
+            newCleanedValue = Regex.Replace(newCleanedValue, @"\r\n?|\n|,", " ");
             return newCleanedValue;
         }
 
