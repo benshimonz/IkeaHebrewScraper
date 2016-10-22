@@ -56,14 +56,17 @@ namespace IkeaIL
                     //    foreach (HtmlNode link in linkNodes)
                     //{
                         HtmlAttribute att = link.Attributes["href"];
-                        string newUrlProd = WebUtility.HtmlDecode("http://www.ikea.co.il" + att.Value);
-                        Console.WriteLine(string.Format("Working on product page:\n{0}\n", newUrlProd));
-                        string webPageString = ReadWebPageAsString(newUrlProd);
+                        if (att != null)
+                        {
+                            string newUrlProd = WebUtility.HtmlDecode("http://www.ikea.co.il" + att.Value);
+                            Console.WriteLine(string.Format("Working on product page:\n{0}\n", newUrlProd));
+                            string webPageString = ReadWebPageAsString(newUrlProd);
 
-                        HtmlDocument docProd = new HtmlDocument();
-                        docProd.LoadHtml(webPageString);
-                        IkeaItem ikeaItem = CreateIkeaItem(newUrlProd, docProd);
-                        ikeaItemsList.Add(ikeaItem);
+                            HtmlDocument docProd = new HtmlDocument();
+                            docProd.LoadHtml(webPageString);
+                            IkeaItem ikeaItem = CreateIkeaItem(newUrlProd, docProd);
+                            ikeaItemsList.Add(ikeaItem);
+                        }
                     });
                 }
             }
@@ -104,7 +107,7 @@ namespace IkeaIL
             }
         }
 
-        private static object FindProductExtraDetails(HtmlDocument docProd)
+        private static string FindProductExtraDetails(HtmlDocument docProd)
         {
             string extraDetails = "";
             try
@@ -119,7 +122,7 @@ namespace IkeaIL
             return CleanValue(extraDetails);
         }
 
-        private static object FindProductCare(HtmlDocument docProd)
+        private static string FindProductCare(HtmlDocument docProd)
         {
             string prodCare = "";
             try

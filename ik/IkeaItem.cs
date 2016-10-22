@@ -18,8 +18,8 @@ namespace IkeaIL
         public string ProductManufacturingCountry { get; set; }
         public string ProductPrice { get; set; }
         public string ProductImageUrl { get; set; }
-        public object ProductExtraDetails { get; set; }
-        public object ProductCare { get; set; }
-        public object ProductUrl { get; set; }
+        public string ProductExtraDetails { get; set; }
+        public string ProductCare { get; set; }
+        public string ProductUrl { get; set; }
     }
 }
