@@ -4,6 +4,9 @@ Scraper for the Ikea Hebrew Catalog 2017
  - c# console application
  - <=.net 4.5
  - Supports Hebrew encoding
+ 
+ 
+[Full Catalog](https://docs.google.com/spreadsheets/d/1unbnGviV7z3u3X6e0Anm8eWsz3pLfUetCLd8NUae_uw) 
 
 
 Steps
